@@ -65,6 +65,19 @@ input[type=search]:focus,input[type=text]:focus,input.focus{
     margin-top: -110px;
 }
 
+.search-result {
+    width: 70%;
+    height: 300px;
+    color: #08f908;
+    background-color: #333;
+    font-family: 'Courier-New';
+    font-weight: 500;
+    border: 2px;
+    border-radius: 10px;
+    margin: 50px 0 0 10px;
+    padding-top: 25px;
+}
+
 /* Media Queries */
 
 @media only screen and (max-width: 768px) {
