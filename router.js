@@ -1,6 +1,7 @@
 /*
  * Express Router for serving the templates
  * Akhil Pandey
+ * MIT License
  */
 
 const fs = require('fs')
