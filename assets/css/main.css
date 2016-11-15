@@ -1,0 +1,88 @@
+/* Guiding Index for Style
+ * =======================
+ *
+ * 0. Reset
+ * 1. Imports
+ * 2. Elements
+ * 3. Id, classes
+ * 4. Pseudo classes
+ * 5. Media queries
+ */
+
+/* Imports */
+
+
+/* Elements */
+
+input[type=search],input[type=text]{
+	height:20px;
+	width: 780px;
+	border-style:solid;
+    border-bottom-color: #999;
+    border-left-color: #fff;
+    border-right-color: #fff;
+    border-top-color: #fff;
+	border-width:0.1px;
+	font-size: auto;
+	font-family:'Open Sans', sans-serif;
+	padding:3.3333333333333px 6.6666666666667px;
+	-moz-border-radius:3px;
+	border-radius:1px;
+	-webkit-transition:all linear .1s;
+	-moz-transition:all linear .1s;
+	-o-transition:all linear .1s;
+	-ms-transition:all linear .1s;
+	transition:all linear .1s
+}
+
+input[type=search]:focus,input[type=text]:focus,input.focus{
+	border-bottom-color:#42a4e0;
+    border-top-color: #fff;
+    border-left-color: #fff;
+    border-right-color: #fff;
+    border-width: 2px;
+	-webkit-transition:all linear .1s;
+	-moz-transition:all linear .1s;
+	-o-transition:all linear .1s;
+	-ms-transition:all linear .1s;
+	transition:all linear .1s
+}
+
+/* ID's and classes */
+
+#searchbox {
+    width: 70%;
+    height: 50px;
+    margin: 0 0 0 10px;
+}
+
+.intro-header {
+    height: 180px;
+    background-color: black;
+}
+
+.site-heading {
+    margin-top: -110px;
+}
+
+/* Media Queries */
+
+@media only screen and (max-width: 768px) {
+	#searchMe{
+		display: block;
+		margin: 20px auto;
+		width: 90%!important;
+	}
+
+    .site-heading {
+        margin-top: -30px;
+    }
+}
+
+@media only screen and (min-width : 480px) and (max-width: 1400px) {
+	#searchMe{
+		display: block;
+		margin: 20px auto;
+		width: 780px;
+	}
+}

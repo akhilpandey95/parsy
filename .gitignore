@@ -1,0 +1,13 @@
+# logs
+^.log
+
+#test files
+test.js
+test.html
+
+#pid
+^.pid
+
+#dependencies
+node_modules/
+bower_components/
