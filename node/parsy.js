@@ -39,17 +39,40 @@ module.exports.context = (foo) => {
 
 module.exports.tellDate = (foo) => {
     let s2 = new Set()
-    let value = new Date().getDate()
-    let evaluate = foo.toString()
+    let prevFlag = false
+    let afterFlag = false
+    let afterKeywords = ['after', 'in', 'within', 'from now', 'to go', 'remaining', 'left']
+    let today = new Date().getDate()
+    let evaluate = foo.toString().toLowerCase()
     let catchDate = foo.toString().split(' ')
     let catchNumber = catchDate.indexOf('days')
+    if (catchDate.indexOf('before') < (catchNumber - 1)) {
+        prevFlag = true
+    }
+    if (catchDate.indexOf('after') < (catchNumber - 1)) {
+        afterFlag = true
+    }
     let specificDay = catchDate[catchNumber - 1]
     let specificDate = specificDay + " days";
     s2.add('today').add('this day').add('tomorrow').add('yesterday').add(specificDate)
 
     for (let item of s2.values()) {
         if (evaluate.includes(item)) {
-            process.stdout.write(`The value of - ${item}\n`)
+            if((item === specificDate) && (afterFlag) && (evaluate.includes(afterKeywords[0] + ' ' + specificDate)
+            || evaluate.includes(afterKeywords[1] + ' ' + specificDate) || evaluate.includes(afterKeywords[2] + ' ' + specificDate)
+            || evaluate.includes(specificDate + ' ' + afterKeywords[3]) || evaluate.includes(specificDate + ' ' + afterKeywords[4])
+            || evaluate.includes(specificDate + ' ' + afterKeywords[5]) || evaluate.includes(specificDate + ' ' + afterKeywords[6]))) {
+                let value = new Date(new Date().setDate(today + parseInt(specificDay)))
+                process.stdout.write(`The value of "${item}" is - ${value}\n`)
+            }
+            if((item === specificDate) && (afterFlag) && (evaluate.includes('before ' + specificDate))) {
+                let value = new Date(new Date().setDate(today - parseInt(specificDay)))
+                process.stdout.write(`The value of "${item}" is - ${value}\n`)
+            }
+            if((s2.has(item)) && (item !== specificDate) && (item === "this day" || item === "today")) {
+                let value = new Date(new Date().setDate(today))
+                process.stdout.write(`The value of "${item}" is - ${value}\n`)
+            }
         }
     }
 }
