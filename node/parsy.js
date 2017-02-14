@@ -1,8 +1,6 @@
-/*
- * parsy himself
- * Akhil Pandey
- * MIT License
- */
+/* This Source Code Form is subject to the terms of the MIT
+ * License. If a copy of the same was not distributed with this
+ * file, You can obtain one at https://github.com/AkhilHector/parsy/blob/master/LICENSE.*/
 
 module.exports.data = (foo) => {
     var prefixed_questions = ["Who are you", "What is your name", "What are you"]
