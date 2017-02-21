@@ -4,6 +4,8 @@
 #test files
 test.js
 test.html
+go/test.*
+node/test.*
 
 #pid
 ^.pid
