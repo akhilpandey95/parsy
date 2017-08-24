@@ -74,3 +74,40 @@ module.exports.tellDate = (foo) => {
         }
     }
 }
+
+module.exports.tellEmail = (foo) => {
+    let s3 = new Set()
+    let evaluate = foo.toString().toLowerCase();
+
+    s3.add('@gmail.com').add('@yahoo.co.in');
+
+    for (let item of s3.values()) {
+        if (evaluate.includes(item)) {
+            process.stdout.write(`${item}\n`)
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
