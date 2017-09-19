@@ -15,4 +15,4 @@ node_modules/
 bower_components/
 
 # go test files
-parsy/go/modules/*/main.go
+go/modules/*/main.go
