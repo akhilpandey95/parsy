@@ -16,3 +16,8 @@ bower_components/
 
 # go test files
 go/modules/*/main.go
+go/modules/*/test.go
+
+# node test files
+node/modules/*/main.js
+node/modules/*/test.js
