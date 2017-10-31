@@ -13,6 +13,7 @@ node/test.*
 #dependencies
 node_modules/
 bower_components/
+node/assets/
 
 # go test files
 go/modules/*/main.go
